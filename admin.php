@@ -9,7 +9,7 @@
                  <thead>
                    <tr>
                     <!-- <th><input type="checkbox"  id="checkAll"/></th> -->
-                     <th>Doner Name</th>
+                     <th>Doner</th>
                      <th>Ammount</th>
                      <th>Purpose</th>
                      <th>Address</th>
