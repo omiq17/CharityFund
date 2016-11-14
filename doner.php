@@ -15,6 +15,11 @@
               Successfully added ".$_SESSION['success']."'s information.</p>";
               unset($_SESSION['success']);
            }
+           else
+           {
+              echo "<p style='color:blue;'>
+              Please fill all the information.</p>";
+           }
             ?>
            <form class="form-horizontal reg-form" action="donerCheck.php" method="post">
                  <div class="form-group form-group-md">
