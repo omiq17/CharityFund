@@ -92,3 +92,11 @@
          </div>
          <!--end Content-->
      </div>
+     <script>
+     $(document).ready(function(){
+         $('.sidebar ul li.active').removeClass("active");
+         $('.sidebar ul li:nth-child(2)').addClass("active");
+     });
+     </script>
+   </body>
+</html>

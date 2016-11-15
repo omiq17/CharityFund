@@ -36,7 +36,9 @@
                        <?php
                            $query="SELECT * FROM `doner` where `d_pay`='Unpaid'";
                            $result=mysqli_query($link, $query);
+                          $total = 0;
                            while($row=mysqli_fetch_array($result)){
+                             $total += $row['d_amount'];
                        ?>
                                <tr>
                                       <td><input type="checkbox" name="selected[]"
@@ -53,6 +55,9 @@
                            ?>
                </tbody>
                </table>
+               <p>
+                 Total Amount = <b><?php echo $total; ?></b> Tk.
+               </p>
                <input type="submit" class="btn btn-primary btn-md"
                       value="Make Paid" name="makePaid">
              </form>
@@ -60,3 +65,11 @@
          </div>
          <!--end Content-->
      </div>
+     <script>
+     $(document).ready(function(){
+         $('.sidebar ul li.active').removeClass("active");
+         $('.sidebar ul li:nth-child(3)').addClass("active");
+     });
+     </script>
+   </body>
+</html>

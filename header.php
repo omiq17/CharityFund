@@ -39,22 +39,10 @@
         </div>
          <div class="col-md-4">
             <?php
-                                    // if(!empty($_SESSION['session'])){
-                                    //     $logged_user = $_SESSION['session'];
-                                        echo "<div class='dropdown profile'>
-                                            <button class='btn btn-primary dropdown-toggle' type='button'
-                                                                data-toggle='dropdown'>
-                                                Hi, <strong>Admin</strong>&nbsp;
-                                              <span class='caret'></span>
-                                              </button>
-                                              <ul class='dropdown-menu'>
-                                                <li><a href='../profile.php'>Profile</a></li>
-                                                <li><a href='../index.php'>Home</a></li>
-                                                <li><a href='../logout.php'>Logout</a></li>
-                                              </ul>
-                                        </div>";
-                                    // }
-                               ?>
+              echo "<div class='profile'>
+                     Hello, <strong>Admin</strong>&nbsp;
+                    </div>";
+            ?>
             </div>
     </div>  <!--end of header div-->
     <div class="container-fluid row section">
@@ -64,7 +52,7 @@
                      <li role="presentation"><a href="admin.php">Dashboard</a></li>
                      <li role="presentation"><a href="doner.php">Add Doner</a></li>
                      <li role="presentation"><a href="list.php">Pending List</a></li>
-                     <li role="presentation"><a href="report.php">Report</a></li>
+                     <!-- <li role="presentation"><a href="report.php">Report</a></li> -->
                 </ul>
             </div>
             <!--end  Sidebar -->

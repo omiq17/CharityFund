@@ -4,7 +4,17 @@
  <!--start Content-->
          <div class="col-md-9 content">
              <div>
-             <form class="form-inline" method="post" action="delproduct.php" >
+             <form class="form-inline" method="post" action="admin.php" >
+               <div class="form-group">
+                <input type="date" name="sdate">
+              </div>
+              <span> To </span>
+              <div class="form-group">
+               <input type="date" name="edate">
+              </div>
+              <input type="submit" class="btn btn-primary btn-md" value="Search By Date">
+              </input>
+             </form>
              <table  id="example" class="table table-striped">
                  <thead>
                    <tr>
@@ -21,13 +31,37 @@
                  </thead>
                </thead>
                <tbody>
-                       <?php
-                           $query="SELECT * FROM `doner`";
-                           $result=mysqli_query($link, $query);
-                           while($row=mysqli_fetch_array($result)){
+              <?php
+              if( isset($_POST['sdate']) && !empty ($_POST['sdate']) &&
+                  isset($_POST['edate']) && !empty ($_POST['edate']) &&
+                  ($_POST['edate'] < $_POST['sdate']) ) {
+                  echo "<p style='color:red;'>
+                    Please give the date range correctly.</p>";
+                      }
+              else if( isset($_POST['sdate']) && !empty ($_POST['sdate'])
+                  && isset($_POST['edate']) && !empty ($_POST['edate']) ) {
+                    $sdate = $_POST['sdate'];
+                    $edate = $_POST['edate'];
+                    $query = " SELECT * FROM `doner` WHERE doner.d_date BETWEEN
+                              '$sdate' AND '$edate' ";
+                    $result = mysqli_query($link, $query);
+                    // print_r ($result);
+                  }
+
+              else if( (isset($_POST['sdate']) && empty ($_POST['sdate'])) ||
+                       (isset($_POST['edate']) && empty ($_POST['edate'])) ) {
+                  echo "<p style='color:red;'>
+                    Please fill up the information correctly.</p>";
+                      }
+              else {
+                $query="SELECT * FROM `doner`";
+                $result=mysqli_query($link, $query);
+              }
+                      $total = 0;
+                      while($row=mysqli_fetch_array($result)){
+                        $total += $row['d_amount'];
                        ?>
                                <tr>
-                                   <form action="" method="POST">
                                        <td><?php echo $row['d_name']?></td>
                                        <td><?php echo $row['d_amount']?></td>
                                        <td><?php echo $row['d_purpose']?></td>
@@ -37,15 +71,23 @@
                                        <td><?php echo $row['d_pay']?></td>
                                        <td><?php echo $row['d_paytype']?></td>
                                </tr>
-                                   </form>
                            <?php
                            }
                            ?>
                </tbody>
-
                </table>
-             </form>
+               <p>
+                 Total Amount = <b><?php echo $total; ?></b> Tk.
+               </p>
              </div>
          </div>
          <!--end Content-->
      </div>
+     <script>
+     $(document).ready(function(){
+         $('.sidebar ul li.active').removeClass("active");
+         $('.sidebar ul li:nth-child(1)').addClass("active");
+     });
+     </script>
+   </body>
+</html>
