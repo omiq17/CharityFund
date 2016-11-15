@@ -1,4 +1,9 @@
-<?php require_once "connect.php" ?>
+<?php require_once "connect.php";
+if(empty($_SESSION['user'])){
+	header('Location: index.php');
+  die();
+}
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -35,14 +40,21 @@
      <!--header & Navbar div-->
     <div class="row header container-fluid">
         <div class="col-md-8">
-            <img src="images/logo.png" alt="delta store">
+            <img src="images/logo.png" alt="Charity Fund">
         </div>
          <div class="col-md-4">
-            <?php
-              echo "<div class='profile'>
-                     Hello, <strong>Admin</strong>&nbsp;
-                    </div>";
-            ?>
+           <?php
+               echo "<div class='dropdown profile'>
+                   <button class='btn btn-primary dropdown-toggle' type='button'
+                                       data-toggle='dropdown'>
+                       Hello, <strong>Admin</strong>&nbsp;
+                     <span class='caret'></span>
+                     </button>
+                     <ul class='dropdown-menu'>
+                       <li><a href='logout.php'>Logout</a></li>
+                     </ul>
+               </div>";
+          ?>
             </div>
     </div>  <!--end of header div-->
     <div class="container-fluid row section">

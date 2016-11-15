@@ -1,0 +1,8 @@
+body {
+  background-color: #ecf0f1;
+}
+.container img {
+    display: block;
+    margin: 0px auto 5%;
+    height: 91px;
+}

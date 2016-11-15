@@ -6,11 +6,11 @@
              <div>
              <form class="form-inline" method="post" action="admin.php" >
                <div class="form-group">
-                <input type="date" name="sdate">
+                <input type="date" name="sdate" required>
               </div>
               <span> To </span>
               <div class="form-group">
-               <input type="date" name="edate">
+               <input type="date" name="edate" required>
               </div>
               <input type="submit" class="btn btn-primary btn-md" value="Search By Date">
               </input>
@@ -45,14 +45,7 @@
                     $query = " SELECT * FROM `doner` WHERE doner.d_date BETWEEN
                               '$sdate' AND '$edate' ";
                     $result = mysqli_query($link, $query);
-                    // print_r ($result);
                   }
-
-              else if( (isset($_POST['sdate']) && empty ($_POST['sdate'])) ||
-                       (isset($_POST['edate']) && empty ($_POST['edate'])) ) {
-                  echo "<p style='color:red;'>
-                    Please fill up the information correctly.</p>";
-                      }
               else {
                 $query="SELECT * FROM `doner`";
                 $result=mysqli_query($link, $query);

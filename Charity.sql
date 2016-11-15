@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 13, 2016 at 10:36 PM
+-- Generation Time: Nov 15, 2016 at 09:18 PM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.12-1+deb.sury.org~xenial+1
 
@@ -44,16 +44,19 @@ CREATE TABLE `doner` (
 
 INSERT INTO `doner` (`d_id`, `d_name`, `d_amount`, `d_purpose`, `d_date`, `d_addr`, `d_cell`, `d_pay`, `d_paytype`) VALUES
 (13, 'Sunny', 111, 'Fund', '2016-11-13', 'Rampura', '017266779999', 'Paid', 'Cheque'),
-(14, 'Ashraf', 7800, 'Mousque building', '2016-11-13', 'Comilla', '01562799878', 'Unpaid', 'Other'),
-(15, 'Mamun', 100, 'Fund', '2016-11-13', 'Rajarbug', '0183897489', 'Paid', 'Cash'),
+(14, 'Ashraf', 7800, 'Mousque building', '2016-11-13', 'Comilla', '01562799878', 'Paid', 'Other'),
+(15, 'Mamun', 100, 'Fund', '2016-11-13', 'Rajarbug', '0183897489', 'Unpaid', 'Cash'),
 (16, 'Mamun', 25, 'Fund', '2016-11-13', 'Rajarbug', '019874897897`', 'Paid', 'Cash'),
-(17, 'Rakib', 1001, 'Building Mosque', '2016-11-13', 'Gazipur', '01594320989', 'Unpaid', 'bKash'),
-(18, 'Aritra', 2500, 'Fund', '2016-11-13', 'Norshingdi', '0187987897', 'Paid', 'Cheque'),
-(19, 'Rakib', 100, 'Mousque building', '2016-11-13', 'Gazipur', '01562799878', 'Unpaid', 'Cash'),
+(17, 'Rakib', 1001, 'Building Mosque', '2016-11-13', 'Gazipur', '01594320989', 'Paid', 'bKash'),
+(18, 'Aritra', 2500, 'Fund', '2016-11-13', 'Norshingdi', '0187987897', 'Unpaid', 'Cheque'),
+(19, 'Rakib', 100, 'Mousque building', '2016-11-13', 'Gazipur', '01562799878', 'Paid', 'Cash'),
 (20, 'Sunny', 5625, 'Fund', '2016-11-13', 'Rampura', '01726287878', 'Paid', 'Other'),
 (21, 'Aritra', 120, 'Fund', '2016-11-13', 'Comilla', '0183897489', 'Paid', 'bKash'),
 (22, 'Ashraf', 25, 'Fund', '2016-11-13', 'Rajarbug', '01726287878', 'Unpaid', 'Cheque'),
-(23, 'Mamun', 30, 'Building Mosque', '2016-11-13', 'Gazipur', '0183897489', 'Paid', 'bKash');
+(23, 'Mamun', 30, 'Building Mosque', '2016-11-13', 'Gazipur', '0183897489', 'Paid', 'bKash'),
+(24, 'Zion', 1001, 'Fund', '2016-11-15', 'Tejgaon', '0172379899', 'Paid', 'Cash'),
+(25, 'Shovon', 115, 'Fund', '2016-11-15', 'Dhaka', '0198437829', 'Paid', 'Cash'),
+(26, 'Sunny', 100, 'Fund', '2016-11-15', 'Rampura', '017266779999', 'Unpaid', 'Cash');
 
 -- --------------------------------------------------------
 
@@ -71,7 +74,8 @@ CREATE TABLE `username` (
 --
 
 INSERT INTO `username` (`u_name`, `u_pass`) VALUES
-('admin', '123456');
+('admin', '123456'),
+('root', 'root');
 
 --
 -- Indexes for dumped tables
@@ -98,7 +102,7 @@ ALTER TABLE `username`
 -- AUTO_INCREMENT for table `doner`
 --
 ALTER TABLE `doner`
-  MODIFY `d_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `d_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

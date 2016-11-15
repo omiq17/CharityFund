@@ -7,12 +7,12 @@
            //if user dont check
            if(isset($_SESSION['form']) && !empty($_SESSION['form'])){
              echo "<p style='color:red;'>
-              Please check order to make them paid.</p>";
+              Please check and then click.</p>";
               unset($_SESSION['form']);
            }
            else if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
              echo "<p style='color:green;'>
-              Successfully made orders paid.</p>";
+              Successfully made paid.</p>";
               unset($_SESSION['success']);
            }
             ?>

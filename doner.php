@@ -4,56 +4,45 @@
  <!--start Content-->
          <div class="col-md-9 content">
            <?php
-           //if user dont check
-           if(isset($_SESSION['form']) && !empty($_SESSION['form'])){
-             echo "<p style='color:red;'>
-              Please give all the information correctly.</p>";
-              unset($_SESSION['form']);
-           }
-           else if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+           if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
              echo "<p style='color:green;'>
               Successfully added ".$_SESSION['success']."'s information.</p>";
               unset($_SESSION['success']);
-           }
-           else
-           {
-              echo "<p style='color:blue;'>
-              Please fill all the information.</p>";
            }
             ?>
            <form class="form-horizontal reg-form" action="donerCheck.php" method="post">
                  <div class="form-group form-group-md">
                    <label class="col-md-2 control-label">Doner Name</label>
                        <div class="col-sm-6">
-                         <input class="form-control" type="text"
+                         <input class="form-control" type="text" required
                                 placeholder="Doner Name" maxlength="50" name="d_name">
                        </div>
                  </div>
                <div class="form-group form-group-md">
                  <label class="col-md-2 control-label">Amount</label>
                  <div class="col-md-6">
-                  <input class="form-control" type="number"
+                  <input class="form-control" type="number" required
                     placeholder="Amount Here" maxlength="200" name="d_amount">
                   </div>
                </div>
               <div class="form-group form-group-md">
                 <label class="col-md-2 control-label">Purpose</label>
                   <div class="col-md-6">
-                    <input class="form-control" type="text"
+                    <input class="form-control" type="text" required
                       placeholder="Purpose of donation" maxlength="20" name="d_purpose">
                   </div>
               </div>
               <div class="form-group form-group-md">
                     <label class="col-md-2 control-label">Address</label>
                     <div class="col-md-6">
-                     <input class="form-control" type="text"
+                     <input class="form-control" type="text" required
                             placeholder="Address Here" maxlength="50" name="d_address">
                    </div>
               </div>
                  <div class="form-group form-group-md">
                        <label class="col-md-2 control-label">Contact Number</label>
                        <div class="col-md-6">
-                         <input class="form-control" type="text"
+                         <input class="form-control" type="text" required
                                 placeholder="ex : 01xxxxxxxxx" name="d_cell">
                        </div>
                  </div>
@@ -61,8 +50,8 @@
                        <label class="col-md-2 control-label">Payment</label>
 
                        <div class="col-md-6 form-group-md">
-                             <select  name="d_pay">
-                                  <option disabled selected style='display:none;'>Payment</option>
+                             <select  name="d_pay"  required>
+                                  <option value="">Payment</option>
                                   <option value='Paid' >Paid</option>
                                   <option value='Unpaid' >Pending</option>
                              </select>
@@ -70,11 +59,11 @@
 
                  </div>
                  <div class="form-group form-group-md">
-                       <label class="col-md-2 control-label">Pay Type</label>
+                       <label class="col-md-2 control-label">Payment Type</label>
 
                        <div class="col-md-6 form-group-md">
-                             <select  name="d_paytype">
-                                  <option disabled selected style='display:none;'>Pay Type</option>
+                             <select  name="d_paytype" required>
+                                  <option value="">Payment Type</option>
                                   <option value='Cash' >Cash</option>
                                   <option value='Cheque' >Cheque</option>
                                   <option value='bKash' >bKash</option>
