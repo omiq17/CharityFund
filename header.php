@@ -40,7 +40,7 @@ if(empty($_SESSION['user'])){
      <!--header & Navbar div-->
     <div class="row header container-fluid">
         <div class="col-md-8">
-            <img src="images/logo.png" alt="Charity Fund">
+            <a href="admin.php"><img src="images/logo.png" alt="Charity Fund"></a>
         </div>
          <div class="col-md-4">
            <?php

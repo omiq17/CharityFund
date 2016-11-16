@@ -21,7 +21,7 @@ if(!empty($_SESSION['user'])){
 
 <body>
   <div class="container" style="margin-top: 5%;">
-    <img src="images/logo.png" alt="Charity Fund">
+    <a href="index.php"><img src="images/logo.png" alt="Charity Fund"></a>
     <?php
     if(isset($_SESSION['invalid']) && !empty($_SESSION['invalid'])){
       echo "<p style='color:red; text-align:center; font-size:17px;'>
