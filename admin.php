@@ -31,14 +31,10 @@
                  </thead>
                </thead>
                <tbody>
+              <p id="error">
+              </p>
               <?php
-              if( isset($_POST['sdate']) && !empty ($_POST['sdate']) &&
-                  isset($_POST['edate']) && !empty ($_POST['edate']) &&
-                  ($_POST['edate'] < $_POST['sdate']) ) {
-                  echo "<p style='color:red;'>
-                    Please give the date range correctly.</p>";
-                      }
-              else if( isset($_POST['sdate']) && !empty ($_POST['sdate'])
+              if( isset($_POST['sdate']) && !empty ($_POST['sdate'])
                   && isset($_POST['edate']) && !empty ($_POST['edate']) ) {
                     $sdate = $_POST['sdate'];
                     $edate = $_POST['edate'];
@@ -80,6 +76,15 @@
      $(document).ready(function(){
          $('.sidebar ul li.active').removeClass("active");
          $('.sidebar ul li:nth-child(1)').addClass("active");
+         //check two dates
+         $("form").submit(function(e){
+           $sdate = new  Date( $("input:first").val() );
+           $edate = new Date( $("input:odd").val() );
+           if($sdate > $edate) {
+             e.preventDefault();
+             $('p#error').text("Date range is invalid").show().fadeOut(2101);
+           }
+         });
      });
      </script>
    </body>

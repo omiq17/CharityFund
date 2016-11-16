@@ -71,6 +71,10 @@ body{
 /**
 * Content
 */
+p#error {
+  color: red;
+  font-weight: bold;
+}
 table.dataTable thead th, table.dataTable thead td {
     padding: 10px 18px 10px 10px !important;
   }
@@ -123,6 +127,3 @@ table.dataTable thead th, table.dataTable thead td {
 nav{
     text-align: right;
 }
-table.dataTable thead th, table.dataTable thead td {
-    padding: 10px 18px 10px 10px !important;
-  }
